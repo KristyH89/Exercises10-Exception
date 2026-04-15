@@ -27,12 +27,12 @@ Use `try-catch` to handle `InputMismatchException` and a **custom exception** fo
 
 ## Exercise 3: Custom Exception
 **Task:**  
-Define a custom exception `exercise3.InsufficientBalanceException` that is thrown when a withdrawal amount exceeds the account balance.
+Define a custom exception `InsufficientBalanceException` that is thrown when a withdrawal amount exceeds the account balance.
 
 Implement a simple banking system that allows deposits and withdrawals, and handles the custom exception appropriately.
 
 **Hint:**  
-Create a `exercise3.BankAccount` class and handle the custom exception using `throw` and `throws`.
+Create a `BankAccount` class and handle the custom exception using `throw` and `throws`.
 
 ---
 
@@ -76,9 +76,9 @@ Create a program that manages a list of names.
 
 Implement:
 - A method to find a name in the list  
-  - Throw `exercise7.NameNotFoundException` if the name is not found
+  - Throw `NameNotFoundException` if the name is not found
 - A method to add a name to the list  
-  - Throw `exercise7.DuplicateNameException` if the name already exists
+  - Throw `DuplicateNameException` if the name already exists
 
 ---
 
