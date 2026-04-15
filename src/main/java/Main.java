@@ -15,7 +15,9 @@ public class Main {
 
       //  Exercises.exercise4();
 
-        Exercises.exercise5(scanner);
+       // Exercises.exercise5(scanner);
+
+        Exercises.exercise6(scanner);
 
         scanner.close();
     }

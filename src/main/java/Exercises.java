@@ -139,9 +139,10 @@ public class Exercises {
         }
     }
 
+
+    // Exercises 5
     public static void exercise5(Scanner scanner) {
 
-// Exercises 5
         System.out.println("Exercises 5:");
 
         try {
@@ -161,9 +162,38 @@ public class Exercises {
         }
     }
 
+    // Exercises 6
+    public static void exercise6(Scanner scanner) {
+        System.out.println("Exercises 6:");
+
+        System.out.println("Enter an email address: ");
+        String email = scanner.nextLine();
+
+        try {
+            validateEmail(email);
+            System.out.println("Valid email: " + email);
+
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+
+    }
+
+    public static void validateEmail(String email) {
+        if (email == null || email.isEmpty()) {
+            throw new IllegalArgumentException("Email cannot be empty!");
+        }
+
+        if (!email.contains("@") || !email.contains(".")) {
+            throw new IllegalArgumentException("Invalid email address! Email must contain an '@' and a domain (e.g .com, .se).");
+        }
+
+
+
+
+    }
+
+
 }
-
-
-
 
 
