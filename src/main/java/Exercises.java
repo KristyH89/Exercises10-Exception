@@ -1,6 +1,9 @@
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.io.*;
+import java.nio.file.*;
+
 
 public class Exercises {
 
@@ -111,6 +114,34 @@ public class Exercises {
 
     }
 
+    // Exercises 4
+
+    public static void exercise4() {
+        System.out.println("\nExercises 4:");
+        try {
+            BufferedReader reader = Files.newBufferedReader(Paths.get("numbers.txt"));
+
+            String line;
+
+            while ((line = reader.readLine()) != null) {
+                try {
+                    int number = Integer.parseInt(line);
+                    System.out.println(number);
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid number: " + line);
+                }
+            }
+
+        } catch (NoSuchFileException e) {
+            System.out.println("File not found! Please make sure 'numbers.txt' exists.");
+        } catch (IOException e) {
+            System.out.println("IO error occurred.");
+        }
+    }
+
 }
+
+
+
 
 
