@@ -70,6 +70,11 @@ public class Exercises {
                     case 1:
                         System.out.println("Enter deposit amount: ");
                         double depositAmount = scanner.nextDouble();
+
+                        if (depositAmount <= 0) {
+                            System.out.println("Deposit must be positive!");
+                            break;
+                        }
                         account.deposit(depositAmount);
                         System.out.println("New Balance: " + account.getBalance());
                         break;
