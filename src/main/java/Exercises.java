@@ -1,4 +1,11 @@
 
+import exercise2.OutOfRangeException;
+import exercise3.BankAccount;
+import exercise3.InsufficientBalanceException;
+import exercise7.DuplicateNameException;
+import exercise7.NameManager;
+import exercise7.NameNotFoundException;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.*;
@@ -188,12 +195,67 @@ public class Exercises {
             throw new IllegalArgumentException("Invalid email address! Email must contain an '@' and a domain (e.g .com, .se).");
         }
 
+    }
 
+    // Exercises 7
+    public static void exercise7(Scanner scanner) {
+        System.out.println("Exercises 7:");
+
+        NameManager manager = new NameManager();
+        boolean running = true;
+
+        while (running) {
+            System.out.println("\n=== Menu ===");
+            System.out.println("Please choose an option:");
+            System.out.println("1. Add name");
+            System.out.println("2. Find name");
+            System.out.println("3. Show names");
+            System.out.println("4. Exit");
+
+            int choice = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Enter a name to add: ");
+                    String nameToAdd = scanner.nextLine();
+
+                    try{
+                        manager.addName(nameToAdd);
+                        System.out.println("Name added!");
+                    } catch (DuplicateNameException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+
+                case 2:
+                    System.out.println("Enter a name to findL ");
+                    String nameToFind = scanner.nextLine();
+
+                    try {
+                        manager.findName(nameToFind);
+                    } catch (NameNotFoundException e) {
+                        System.out.println(e.getMessage());
+                    }
+                    break;
+
+                case 3:
+                    manager.showNames();
+                    break;
+
+                case 4:
+                    System.out.println("Exiting... Have a nice day!");
+                    running = false;
+                    break;
+
+                default:
+                    System.out.println("Invalid choice! Please try again.");
+
+
+            }
+        }
 
 
     }
 
-
 }
-
-

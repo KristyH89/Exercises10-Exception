@@ -1,3 +1,5 @@
+package exercise3;
+
 public class BankAccount {
     private double balance;
 

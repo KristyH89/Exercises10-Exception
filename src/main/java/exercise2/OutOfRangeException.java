@@ -1,4 +1,6 @@
-class OutOfRangeException extends Exception {
+package exercise2;
+
+public class OutOfRangeException extends Exception {
     public OutOfRangeException(String message) {
         super(message);
     }
