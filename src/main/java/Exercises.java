@@ -139,6 +139,28 @@ public class Exercises {
         }
     }
 
+    public static void exercise5(Scanner scanner) {
+
+// Exercises 5
+        System.out.println("Exercises 5:");
+
+        try {
+            System.out.println("\nEnter the first integer: ");
+            int num3 = scanner.nextInt();
+
+            System.out.println("Enter the second integer: ");
+            int num4 = scanner.nextInt();
+
+            int result = num3 / num4;
+            System.out.println("Result: " + result);
+
+        } catch (ArithmeticException e) {
+            System.out.println("Error: You cannot divide by zero!");
+        } finally {
+            System.out.println("\nFinally! This block always runs.");
+        }
+    }
+
 }
 
 
