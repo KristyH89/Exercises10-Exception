@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -5,7 +6,10 @@ public class Main {
     static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
 
-        Exercises.exercise1(scanner);
+    // While I'm doing all the exercises, I will temporally hide the previous exercises
+        //Exercises.exercise1(scanner);
+
+        Exercises.exercise2(scanner);
 
 
         scanner.close();
