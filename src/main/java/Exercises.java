@@ -10,6 +10,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.*;
 import java.nio.file.*;
+import java.io.FileWriter;
+import java.io.IOException;
 
 
 public class Exercises {
@@ -17,7 +19,7 @@ public class Exercises {
     public static void exercise1(Scanner scanner) {
 
 // Exercises 1
-        System.out.println("Exercises 1:");
+        System.out.println(" --- Exercise 1 --- ");
 
         try {
             System.out.println("\nEnter the first integer: ");
@@ -33,9 +35,9 @@ public class Exercises {
         }
     }
 
-    // Exercises 2
+// Exercises 2
     public static void exercise2(Scanner scanner) {
-        System.out.println("\nExercises 2:");
+        System.out.println("\n --- Exercise 2 --- ");
         while (true) {
             try {
                 System.out.println("Enter a number (1-100): ");
@@ -58,10 +60,10 @@ public class Exercises {
 
     }
 
-    // Exercises 3
+// Exercises 3
 
     public static void exercise3(Scanner scanner) {
-        System.out.println("\nExercises 3:");
+        System.out.println("\n --- Exercise 3 --- ");
         BankAccount account = new BankAccount(100);
         System.out.println("Starting balance: " + account.getBalance());
 
@@ -121,10 +123,10 @@ public class Exercises {
 
     }
 
-    // Exercises 4
+// Exercises 4
 
     public static void exercise4() {
-        System.out.println("\nExercises 4:");
+        System.out.println("\n --- Exercise 4 ---");
         try {
             BufferedReader reader = Files.newBufferedReader(Paths.get("numbers.txt"));
 
@@ -147,10 +149,10 @@ public class Exercises {
     }
 
 
-    // Exercises 5
+// Exercises 5
     public static void exercise5(Scanner scanner) {
 
-        System.out.println("Exercises 5:");
+        System.out.println("\n --- Exercise 5 --- ");
 
         try {
             System.out.println("\nEnter the first integer: ");
@@ -169,9 +171,9 @@ public class Exercises {
         }
     }
 
-    // Exercises 6
+// Exercises 6
     public static void exercise6(Scanner scanner) {
-        System.out.println("Exercises 6:");
+        System.out.println("\n --- Exercise 6 --- ");
 
         System.out.println("Enter an email address: ");
         String email = scanner.nextLine();
@@ -197,9 +199,9 @@ public class Exercises {
 
     }
 
-    // Exercises 7
+// Exercises 7
     public static void exercise7(Scanner scanner) {
-        System.out.println("Exercises 7:");
+        System.out.println("\n --- Exercise 7 --- ");
 
         NameManager manager = new NameManager();
         boolean running = true;
@@ -220,7 +222,7 @@ public class Exercises {
                     System.out.println("Enter a name to add: ");
                     String nameToAdd = scanner.nextLine();
 
-                    try{
+                    try {
                         manager.addName(nameToAdd);
                         System.out.println("Name added!");
                     } catch (DuplicateNameException e) {
@@ -254,8 +256,31 @@ public class Exercises {
 
             }
         }
+    }
 
+// Exercises 8
+        public static void exercise8(Scanner scanner) {
+            System.out.println("\n --- Exercise 8 --- ");
 
+            while (true) {
+                System.out.println("Enter text to write to file: ");
+                String text = scanner.nextLine();
+
+                if (text.trim().isEmpty()) {
+                    System.out.println("Error: Text cannot be empty. Please try again.");
+                    continue;
+                }
+
+                try (FileWriter writer = new FileWriter("output.txt")) {
+                    writer.write(text);
+                    System.out.println("File written successfully.");
+                    break;
+
+                } catch (IOException e) {
+                    System.out.println("Error writing file: " + e.getMessage());
+                    e.printStackTrace();
+                }
+            }
     }
 
 }
